@@ -25,8 +25,6 @@ angular.module('myModule', ['ng-reset-on'])
 </body>
 ```
 
-**PLUNKER**
+# PLNKR
 
-```PLUNKER
-https://plnkr.co/BDr93NlKohXRjaGisdkF
-```
+  * https://plnkr.co/BDr93NlKohXRjaGisdkF
