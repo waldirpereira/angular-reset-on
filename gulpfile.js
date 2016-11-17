@@ -10,6 +10,7 @@ let uglify = require('gulp-uglify');
 let rename = require('gulp-rename');
 let sourcemaps = require('gulp-sourcemaps');
 let filter = require('gulp-filter');
+let merge = require('merge-stream');
 
 let config = {
   src: './src/',
@@ -42,5 +43,30 @@ gulp.task('scripts', ['jshint'], function() {
         .pipe(gulp.dest(config.dest));
 });
 
+
+// Clean tests lib folder
+gulp.task('clean-tests-lib', function () {
+    return gulp.src('test/lib/')
+		.pipe(clean());
+});
+
+// Copy test lib
+gulp.task('test', ['clean-tests-lib'], function() {
+	let componentsPath = "bower_components/";
+	let testsLibPath = "test/lib/";
+	return merge(
+		gulp.src(componentsPath + 'jasmine/lib/jasmine-core/*')
+			.pipe(gulp.dest(testsLibPath + 'jasmine')),
+		gulp.src(componentsPath + 'jasmine/images/*')
+			.pipe(gulp.dest(testsLibPath + 'jasmine')),
+		gulp.src(componentsPath + 'jquery/dist/*.js')
+			.pipe(gulp.dest(testsLibPath + 'jquery')),
+		gulp.src(componentsPath + 'angular/*.js')
+			.pipe(gulp.dest(testsLibPath + 'angular')),
+		gulp.src(componentsPath + 'angular-mocks/*.js')
+			.pipe(gulp.dest(testsLibPath + 'angular-mocks'))
+	);
+});
+
 // Default Task
-gulp.task('default', ['scripts']);
+gulp.task('default', ['scripts', 'test']);
