@@ -1,3 +1,12 @@
+<p align="center">
+    <a href="https://github.com/waldirpereira/angular-reset-on">
+        <h1>ng-reset-on</h1>
+    </a>
+    <br>
+    <strong>Reset a field when the given condition is true.</strong>
+</p>
+
+
 # angular-reset-on directive
 Reset a field when the given condition is true.
 
