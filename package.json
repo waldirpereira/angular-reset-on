@@ -1,0 +1,32 @@
+{
+  "name": "angular-reset-on",
+  "version": "1.0.0",
+  "description": "Reset a field when the given condition is true.",
+  "main": "dist/angular-reset-on.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waldirpereira/angular-reset-on.git"
+  },
+  "keywords": [
+    "angularjs",
+    "reset",
+    "directive"
+  ],
+  "author": "Waldir J. Pereira Junior",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/waldirpereira/angular-reset-on/issues"
+  },
+  "homepage": "https://github.com/waldirpereira/angular-reset-on",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-jshint": "^2.0.1",
+	"jshint": "^2.9.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}

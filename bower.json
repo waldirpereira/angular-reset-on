@@ -1,0 +1,22 @@
+{
+  "name": "angular-reset-on",
+  "description": "Reset a field when the given condition is true.",
+  "main": "dist/angular-reset-on.min.js",
+  "authors": [
+    "Waldir J. Pereira Junior"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angularjs",
+    "reset",
+    "directive"
+  ],
+  "homepage": "https://github.com/waldirpereira/angular-reset-on",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
