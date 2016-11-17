@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="testResetOn">
+
+<head>
+  <meta charset="utf-8" />
+  <title>angular-reset-on example</title>
+  <script data-require="angular.js@1.0.x" src="https://code.angularjs.org/1.0.8/angular.js" data-semver="1.0.8"></script>
+  <script src="../dist/angular-reset-on.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+  
+  Selection:
+  <select ng-model="selection">
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+    <option value="4">Four</option>
+    <option value="5">Five</option>
+  </select>
+
+  <ul>
+    <li>
+      Clear on selection == One:
+      <input type="text" ng-model="field1" ng-reset-on="selection == 1;" />
+    </li>
+    <li>
+      Clear on selection == Two:
+      <input type="checkbox" ng-model="field2" ng-reset-on="selection == 2;">
+    </li>
+    <li>
+      Clear on selection == Three:
+      <select ng-model="field3" ng-reset-on="selection == 3;">
+        <option ng-value="a">A</option>
+        <option ng-value="b">B</option>
+        <option ng-value="c">C</option>
+      </select>
+    </li>
+    <li>
+      Clear on selection == For:
+      <input type="radio" ng-model="field4" ng-value="true" ng-reset-on="selection == 4;"/> True
+      <input type="radio" ng-model="field4" ng-value="false" ng-reset-on="selection == 4;"/> False
+    </li>
+    <li>
+      Clear on selection == Five:
+      <select ng-model="field5" multiple rows="3" ng-reset-on="selection == 5;">
+        <option value="x">X</option>
+        <option value="y">Y</option>
+        <option value="z">Z</option>
+      </select>
+    </li>
+  </ul>
+
+  <br />
+  <br /> Selection: {{selection}}
+  <br /> Field 1: {{field1}}
+  <br /> Field 2: {{field2}}
+  <br /> Field 3: {{field3}}
+  <br /> Field 4: {{field4}}
+  <br /> Field 5: {{field5 | json}}
+  
+  <br />
+  <br />
+  <input type="button" ng-click="resetForm()" value="Reset form"/>
+</body>
+
+</html>

@@ -21,12 +21,17 @@
     "url": "https://github.com/waldirpereira/angular-reset-on/issues"
   },
   "homepage": "https://github.com/waldirpereira/angular-reset-on",
+  "dependencies": {
+    "angular": ">=1.0.8"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
+    "gulp-filter": "^4.0.0",
     "gulp-jshint": "^2.0.1",
-	"jshint": "^2.9.3",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^2.0.0"
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.3"
   }
 }

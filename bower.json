@@ -19,5 +19,11 @@
     "test",
     "tests"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "1.0.8"
+  },
+  "resolutions": {
+    "angular": "1.0.8"
+  }
 }

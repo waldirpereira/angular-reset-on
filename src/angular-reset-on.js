@@ -1,9 +1,10 @@
 /**
- * "Reset on" directive for Angular 1.0
+ * "Reset on" directive for Angular 1.0.0
  * 
  * Reset a field when a given scope condition is true
  *
- * @author  Waldir Pereira <waldirpereira@gmail.com>
+ * @author  Waldir J. Pereira Junior <waldirpereira@gmail.com>
+ * https://github.com/waldirpereira/angular-reset-on
  */
 
 (function () {
