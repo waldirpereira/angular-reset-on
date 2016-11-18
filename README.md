@@ -5,14 +5,15 @@
 
 
 <p align="center">
-    <a href="https://travis-ci.org/waldirpereira/angular-reset-on.svg">
-        <img src="https://travis-ci.org/waldirpereira/angular-reset-on.svg?branch=master"
-             alt="Travis">
-    </a>
-    <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md">
-        <img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg"
-             alt="license">
-    </a>
+    <a href="https://travis-ci.org/waldirpereira/angular-reset-on.svg"><img src="https://travis-ci.org/waldirpereira/angular-reset-on.svg?branch=master"
+      alt="Travis"></a>
+    <a href="https://raw.githubusercontent.com/waldirpereira/angular-reset-on/master/LICENSE.md"><img src="https://img.shields.io/github/license/waldirpereira/angular-reset-on.svg"
+      alt="license"></a>
+    <a href="https://github.com/waldirpereira/angular-reset-on/issues"><img src="https://img.shields.io/github/issues/waldirpereira/angular-reset-on.svg"
+      alt="license"></a>
+    <a href='https://coveralls.io/github/waldirpereira/angular-reset-on?branch=master'><img src='https://coveralls.io/repos/github/waldirpereira/angular-reset-on/badge.svg?branch=master' 
+      alt='Coverage Status' /></a>
+
 </p>
 
 # Demo
