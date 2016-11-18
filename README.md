@@ -44,10 +44,12 @@ Just import the `angular-reset-on.js` file on `dist` directory to your project.
 
 You must include the module as a dependency of yours, something like:
 
-```JavaScript
+#### .js
+```Javascript
 angular.module('myModule', ['ng-reset-on'])
 ```
 
+#### .html
 ```HTML
 <body ng-app="myModule">
     <div ng-controller="Ctrl">
