@@ -7,7 +7,7 @@
 <p align="center">
     <a href="https://travis-ci.org/waldirpereira/angular-reset-on.svg"><img src="https://travis-ci.org/waldirpereira/angular-reset-on.svg?branch=master"
       alt="Build Status"></a>
-    <a href='https://www.versioneye.com/user/projects/582f2dcfc8dd3300448f9ec5'><img src='https://www.versioneye.com/user/projects/582f2dcfc8dd3300448f9ec5/badge.svg?style=flat-square' 
+    <a href='https://www.versioneye.com/user/projects/582f2dcfc8dd3300448f9ec5'><img src='https://www.versioneye.com/user/projects/582f2dcfc8dd3300448f9ec5/badge.svg?style=flat' 
       alt="Dependency Status" /></a>
     <a href='https://coveralls.io/github/waldirpereira/angular-reset-on?branch=master'><img src='https://coveralls.io/repos/github/waldirpereira/angular-reset-on/badge.svg?branch=master' 
       alt='Coverage Status' /></a>

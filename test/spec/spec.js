@@ -32,6 +32,12 @@
       
       expect($scope.testModel).toEqual(expected);
     }
+
+    describe('should do nothing if model has no value', function() {
+      it('text input', function () {
+        runTest(null, '<input type="text" ng-model="testModel" ng-reset-on="testValue === 1">', null);
+      });
+    });
     
     describe('should make ngModel = undefined when testValue === 1 for simple inputs', function() {
       it('text input', function () {
@@ -60,7 +66,6 @@
     });
 
     describe('should make ngModel = [] when testValue === 1 for multi-value inputs', function() {
-    
       it('multiple select input', function () {
         runTest(['b', 'c'], '<select ng-model="testModel" multiple ng-reset-on="testValue === 1">' +
           '<option ng-value="a">A</option>' +
