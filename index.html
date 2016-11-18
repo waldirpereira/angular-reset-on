@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>angular-reset-on by waldirpereira</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>angular-reset-on</h1>
+          <h2>Reset a field when the given condition is true.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/waldirpereira/angular-reset-on/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/waldirpereira/angular-reset-on/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/waldirpereira/angular-reset-on" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <p align="center">
+    </p><h1>
+<a id="ng-reset-on-directive" class="anchor" href="#ng-reset-on-directive" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/waldirpereira/angular-reset-on">ng-reset-on</a> directive</h1>
+    <strong>Reset a field when the given condition is true.</strong>
+
+
+<p align="center">
+    <a href="https://travis-ci.org/waldirpereira/angular-reset-on.svg"><img src="https://travis-ci.org/waldirpereira/angular-reset-on.svg?branch=master" alt="Build Status"></a>
+    <a href="https://www.versioneye.com/user/projects/582f2dcfc8dd3300448f9ec5"><img src="https://www.versioneye.com/user/projects/582f2dcfc8dd3300448f9ec5/badge.svg?style=flat" alt="Dependency Status"></a>
+    <a href="https://coveralls.io/github/waldirpereira/angular-reset-on?branch=master"><img src="https://coveralls.io/repos/github/waldirpereira/angular-reset-on/badge.svg?branch=master" alt="Coverage Status"></a>
+    <a href="https://github.com/waldirpereira/angular-reset-on/issues"><img src="https://img.shields.io/github/issues/waldirpereira/angular-reset-on.svg" alt="Open Issues"></a>
+    <a href="https://raw.githubusercontent.com/waldirpereira/angular-reset-on/master/LICENSE.md"><img src="https://img.shields.io/github/license/waldirpereira/angular-reset-on.svg" alt="License"></a>
+</p>
+
+<h1>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h1>
+
+<p>Just visit <a href="https://waldirpereira.github.io/angular-reset-on/example">https://waldirpereira.github.io/angular-reset-on/example</a>!</p>
+
+<h1>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h1>
+
+<h4>
+<a id="install-with-bower" class="anchor" href="#install-with-bower" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install with Bower</h4>
+
+<div class="highlight highlight-source-shell"><pre>$ bower install angular-reset-on</pre></div>
+
+<h4>
+<a id="manual-download" class="anchor" href="#manual-download" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Manual download</h4>
+
+<p>Just import the <code>angular-reset-on.js</code> file on <code>dist</code> directory to your project.</p>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+
+<p>You must include the module as a dependency of yours, something like:</p>
+
+<h4>
+<a id="js" class="anchor" href="#js" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>.js</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">angular</span>.<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">'</span>myModule<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>ng-reset-on<span class="pl-pds">'</span></span>])</pre></div>
+
+<h4>
+<a id="html" class="anchor" href="#html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>.html</h4>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">body</span> <span class="pl-e">ng-app</span>=<span class="pl-s"><span class="pl-pds">"</span>myModule<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">ng-controller</span>=<span class="pl-s"><span class="pl-pds">"</span>Ctrl<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">ng-reset-on</span>=<span class="pl-s"><span class="pl-pds">"</span>someField == 1<span class="pl-pds">"</span></span> /&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;
+&lt;/<span class="pl-ent">body</span>&gt;</pre></div>
+        </section>
+
+        <footer>
+          angular-reset-on is maintained by <a href="https://github.com/waldirpereira">waldirpereira</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
