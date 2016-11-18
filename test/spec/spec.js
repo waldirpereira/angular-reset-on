@@ -5,7 +5,7 @@
     var $rootScope, $compile, $scope, element;
 
     beforeEach(module('ng-reset-on'));
-
+      
     beforeEach(inject(function ($injector) {
       $rootScope = $injector.get('$rootScope');
       $compile = $injector.get('$compile');
@@ -22,13 +22,14 @@
     function runTest(modelValue, template, expected) {
       $scope.testModel = modelValue;
       $scope.testValue = 0;
+      
       var element = createElement(template);
 
       expect($scope.testModel).toEqual(modelValue);
       
       $scope.testValue = 1;
       $scope.$digest();
-
+      
       expect($scope.testModel).toEqual(expected);
     }
     

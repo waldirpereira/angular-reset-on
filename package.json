@@ -4,7 +4,7 @@
   "description": "Reset a field when the given condition is true.",
   "main": "dist/angular-reset-on.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -29,12 +29,17 @@
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-filter": "^4.0.0",
+    "gulp-jasmine": "^2.4.2",
     "gulp-jshint": "^2.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "jasmine": "^2.5.2",
     "jshint": "^2.9.3",
+    "karma": "^1.3.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-spec-reporter": "0.0.26",
     "merge-stream": "^1.0.0"
   }
 }

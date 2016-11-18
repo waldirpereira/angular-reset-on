@@ -6,7 +6,6 @@
     <strong>Reset a field when the given condition is true.</strong>
 </p>
 
-
 # angular-reset-on directive
 Reset a field when the given condition is true.
 
