@@ -13,6 +13,7 @@ var filter = require('gulp-filter');
 var merge = require('merge-stream');
 var jasmine = require('gulp-jasmine');
 var karmaServer = require('karma').Server;
+var coveralls = require('gulp-coveralls');
 
 var pathToKarmaConf = __dirname + '/test/conf/';
 
@@ -73,12 +74,21 @@ gulp.task('copy-tests-lib', ['clean-tests-lib'], function() {
 });
 
 // Test task (run Karma)
-gulp.task('test', function (done) {
+gulp.task('karma', function (done) {
   return new karmaServer({
     configFile: pathToKarmaConf + 'karma.conf.js',
     singleRun: true
   }, done).start();
 });
+
+// Send code coverage to Coveralls
+gulp.task('coveralls', ['karma'], function (done) {
+  return gulp.src('test/coverage/**/lcov.info')
+    .pipe(coveralls());
+});
+
+// Test task
+gulp.task('test', ['coveralls']);
 
 // Default Task
 gulp.task('default', ['scripts', 'copy-tests-lib']);
