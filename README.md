@@ -9,11 +9,12 @@
       alt="Travis"></a>
     <a href="https://raw.githubusercontent.com/waldirpereira/angular-reset-on/master/LICENSE.md"><img src="https://img.shields.io/github/license/waldirpereira/angular-reset-on.svg"
       alt="license"></a>
-    <a href="https://github.com/waldirpereira/angular-reset-on/issues"><img src="https://img.shields.io/github/issues/waldirpereira/angular-reset-on.svg"
-      alt="license"></a>
+    <a href='https://www.versioneye.com/user/projects/582f2dcfc8dd3300448f9ec5'><img src='https://www.versioneye.com/user/projects/582f2dcfc8dd3300448f9ec5/badge.svg?style=flat-square' 
+      alt="Dependency Status" /></a>
     <a href='https://coveralls.io/github/waldirpereira/angular-reset-on?branch=master'><img src='https://coveralls.io/repos/github/waldirpereira/angular-reset-on/badge.svg?branch=master' 
       alt='Coverage Status' /></a>
-
+    <a href="https://github.com/waldirpereira/angular-reset-on/issues"><img src="https://img.shields.io/github/issues/waldirpereira/angular-reset-on.svg"
+      alt="license"></a>
 </p>
 
 # Demo
