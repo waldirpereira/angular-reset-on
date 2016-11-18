@@ -57,12 +57,12 @@ gulp.task('clean-tests-lib', function () {
 
 // Copy test lib
 gulp.task('copy-tests-lib', ['clean-tests-lib'], function() {
-	var componentsPath = "bower_components/";
+	var componentsPath = "node_modules/";
 	var testsLibPath = "test/lib/";
 	return merge(
-		gulp.src(componentsPath + 'jasmine/lib/jasmine-core/*')
+		gulp.src(componentsPath + 'jasmine-core/lib/jasmine-core/*')
 			.pipe(gulp.dest(testsLibPath + 'jasmine')),
-		gulp.src(componentsPath + 'jasmine/images/*')
+		gulp.src(componentsPath + 'jasmine-core/images/*')
 			.pipe(gulp.dest(testsLibPath + 'jasmine')),
 		gulp.src(componentsPath + 'jquery/dist/*.js')
 			.pipe(gulp.dest(testsLibPath + 'jquery')),
