@@ -1,8 +1,5 @@
 <p align="center">
-    <a href="https://github.com/waldirpereira/angular-reset-on">
-        <h1>ng-reset-on</h1>
-    </a>
-    <br>
+    <h1><a href="https://github.com/waldirpereira/angular-reset-on">ng-reset-on</a> directive</h1>
     <strong>Reset a field when the given condition is true.</strong>
 </p>
 
@@ -28,24 +25,28 @@
     </a>
 </p>
 
-# angular-reset-on directive
-Reset a field when the given condition is true.
+# Demo
+
+Just visit https://waldirpereira.github.io/angular-reset-on/example!
 
 # Installation
 
-Just import the `angular-reset-on.js` file.
+#### Install with Bower
+```sh
+$ bower install angular-reset-on
+```
+
+#### Manual download
+
+Just import the `angular-reset-on.js` file on `dist` directory to your project.
 
 # Usage
 
 You must include the module as a dependency of yours, something like:
 
-```Javascript
+```JavaScript
 angular.module('myModule', ['ng-reset-on'])
 ```
-
-# Example
-
-**HTML**
 
 ```HTML
 <body ng-app="myModule">
@@ -54,7 +55,3 @@ angular.module('myModule', ['ng-reset-on'])
     </div>
 </body>
 ```
-
-# PLNKR
-
-  * https://plnkr.co/BDr93NlKohXRjaGisdkF
