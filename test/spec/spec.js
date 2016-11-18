@@ -1,11 +1,12 @@
 (function () {
   'use strict';
   
-  describe('Testing ng-reset-on directive', function() {
+  describe('ng-reset-on tests', function() {
     var $rootScope, $compile, $scope, element;
 
     beforeEach(module('ng-reset-on'));
-      
+    beforeEach(module('ui.select'));
+    
     beforeEach(inject(function ($injector) {
       $rootScope = $injector.get('$rootScope');
       $compile = $injector.get('$compile');
@@ -57,22 +58,58 @@
       });
       
       it('simple select input', function () {
-        runTest('a', '<select ng-model="testModel" ng-reset-on="testValue === 1">' +
-          '<option ng-value="a">A</option>' +
-          '<option ng-value="b">B</option>' +
-          '<option ng-value="c">C</option>' +
+        runTest('a', 
+          '<select ng-model="testModel" ng-reset-on="testValue === 1">' +
+          ' <option ng-value="a">A</option>' +
+          ' <option ng-value="b">B</option>' +
+          ' <option ng-value="c">C</option>' +
           '</select>', undefined);
       });
     });
 
     describe('should make ngModel = [] when testValue === 1 for multi-value inputs', function() {
       it('multiple select input', function () {
-        runTest(['b', 'c'], '<select ng-model="testModel" multiple ng-reset-on="testValue === 1">' +
-          '<option ng-value="a">A</option>' +
-          '<option ng-value="b">B</option>' +
-          '<option ng-value="c">C</option>' +
+        runTest(['b', 'c'], 
+          '<select ng-model="testModel" multiple ng-reset-on="testValue === 1">' +
+          ' <option ng-value="a">A</option>' +
+          ' <option ng-value="b">B</option>' +
+          ' <option ng-value="c">C</option>' +
           '</select>', []);
+      });
+    });
+
+    describe('test with ui-select ', function () {
+      it('multiple', function() {        
+        var template = '<ui-select multiple ng-model="testModel" ng-reset-on="testValue === 1">' +
+          '    <ui-select-match>{{$select.selected}}</ui-select-match>' +
+          '    <ui-select-choices repeat="op in [\'a\', \'b\', \'c\'] track by $index">' +
+          '        <div ng-bind-html="op"></div>' +
+          '    </ui-select-choices>' +
+          '</ui-select>';
+
+        var expected = ['a', 'c'];
+        $scope.testModel = expected;
+        
+        $scope.testValue = 0;
+        
+        var uiSelect = angular.element(template);
+        $compile(uiSelect)($scope);
+        $scope.$digest();
+        
+        var uiSelectController = uiSelect.controller('uiSelect')
+        $scope = uiSelect.isolateScope() || uiSelect.scope();
+        
+        expect(uiSelectController.selected.length).toEqual(2);
+        expect(uiSelectController.selected).toEqual(expected);
+        
+        $scope.testValue = 1;
+        $scope.$digest();
+        
+        expect($scope.testModel).toEqual([]);
+        expect(uiSelectController.selected.length).toEqual(0);
       });
     });
   });
 }());
+
+

@@ -57,19 +57,21 @@ gulp.task('clean-tests-lib', function () {
 
 // Copy test lib
 gulp.task('copy-tests-lib', ['clean-tests-lib'], function() {
-	var componentsPath = "node_modules/";
+	var componentsPath = "bower_components/";
 	var testsLibPath = "test/lib/";
 	return merge(
-		gulp.src(componentsPath + 'jasmine-core/lib/jasmine-core/*')
+		gulp.src(componentsPath + 'jasmine/lib/jasmine-core/*')
 			.pipe(gulp.dest(testsLibPath + 'jasmine')),
-		gulp.src(componentsPath + 'jasmine-core/images/*')
+		gulp.src(componentsPath + 'jasmine/images/*')
 			.pipe(gulp.dest(testsLibPath + 'jasmine')),
 		gulp.src(componentsPath + 'jquery/dist/*.js')
 			.pipe(gulp.dest(testsLibPath + 'jquery')),
 		gulp.src(componentsPath + 'angular/*.js')
 			.pipe(gulp.dest(testsLibPath + 'angular')),
 		gulp.src(componentsPath + 'angular-mocks/*.js')
-			.pipe(gulp.dest(testsLibPath + 'angular-mocks'))
+			.pipe(gulp.dest(testsLibPath + 'angular-mocks')),
+		gulp.src(componentsPath + 'angular-ui-select/dist/*.js')
+			.pipe(gulp.dest(testsLibPath + 'ui-select'))
 	);
 });
 

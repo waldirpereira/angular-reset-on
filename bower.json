@@ -1,0 +1,32 @@
+{
+  "name": "angular-reset-on",
+  "description": "Reset a field when the given condition is true.",
+  "main": "dist/angular-reset-on.min.js",
+  "authors": [
+    "Waldir J. Pereira Junior"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angularjs",
+    "reset",
+    "directive"
+  ],
+  "homepage": "https://github.com/waldirpereira/angular-reset-on",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "^1.0.8"
+  },
+  "devDependencies": {
+    "jasmine": "~2.5.2",
+    "jquery": "~3.1.0",
+    "angular-mocks": "^1.0.8",
+    "angular-ui-select": "^0.19.6"
+  }
+}
