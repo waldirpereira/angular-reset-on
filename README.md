@@ -27,6 +27,11 @@ Just visit https://waldirpereira.github.io/angular-reset-on/example!
 $ bower install angular-reset-on
 ```
 
+#### Install with NPM
+```sh
+$ npm install angular-reset-on
+```
+
 #### Manual download
 
 Just import the `angular-reset-on.js` file on `dist` directory to your project.
