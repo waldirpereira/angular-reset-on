@@ -1,6 +1,6 @@
 {
   "name": "angular-reset-on",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reset a field when the given condition is true.",
   "main": "dist/angular-reset-on.min.js",
   "scripts": {
