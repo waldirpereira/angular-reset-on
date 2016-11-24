@@ -52,6 +52,6 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-spec-reporter": "0.0.26",
     "merge-stream": "^1.0.0",
-    "ui-select": "^0.19.6"
+    "ui-select": "^0.20.0"
   }
 }
