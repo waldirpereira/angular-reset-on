@@ -1,10 +1,10 @@
 <p align="center">
-    <h1><a href="https://github.com/waldirpereira/angular-reset-on">ng-reset-on</a> directive</h1>
-    <strong>Reset a field when the given condition is true.</strong>
+    <h1><a href="https://waldirpereira.github.io/angular-reset-on">ng-reset-on</a> directive</h1>
+    <strong>Resets a field to its initial value (or cleans) when given scope expression is true.</strong>
 </p>
 
 <p align="center">
-    <a href="https://travis-ci.org/waldirpereira/angular-reset-on.svg"><img src="https://travis-ci.org/waldirpereira/angular-reset-on.svg?branch=master"
+    <a href="https://travis-ci.org/waldirpereira/angular-reset-on"><img src="https://travis-ci.org/waldirpereira/angular-reset-on.svg?branch=master"
       alt="Build Status"></a>
     <a href='https://www.versioneye.com/user/projects/582f2dcfc8dd3300448f9ec5'><img src='https://www.versioneye.com/user/projects/582f2dcfc8dd3300448f9ec5/badge.svg?style=flat' 
       alt="Dependency Status" /></a>
@@ -27,6 +27,11 @@ Just visit https://waldirpereira.github.io/angular-reset-on/example!
 $ bower install angular-reset-on
 ```
 
+#### Install with NPM
+```sh
+$ npm install angular-reset-on
+```
+
 #### Manual download
 
 Just import the `angular-reset-on.js` file on `dist` directory to your project.
@@ -44,7 +49,25 @@ angular.module('myModule', ['ng-reset-on'])
 ```HTML
 <body ng-app="myModule">
     <div ng-controller="Ctrl">
-        <input type="text" ng-reset-on="someField == 1" />
+        <input type="text" ng-model="thisField" ng-reset-on="anotherField === 1" mode="reset" />
     </div>
 </body>
 ```
+
+#### Options
+ - `ng-reset-on`:  AngularJS expression (*required*)
+ - `mode`: (default: `clean`)
+   - `reset`: resets the field to its initial value
+   - `clean`: cleans the field
+
+# Changelog
+
+See [CHANGELOG.md](https://github.com/waldirpereira/angular-reset-on/blob/master/CHANGELOG.md)
+
+# Contribution
+ - Using [Gulp](http://gulpjs.com) as build tool
+ - Uses [jasmine 2.5.2](http://jasmine.github.io) in writing unit test specs
+ - `gulp` to build the project
+ - `gulp test` to run unit tests
+ - Update `README.md` and `CHANGELOG.md` to reflect the new changes
+ - Update the version number of `package.json` and `bower.json`
