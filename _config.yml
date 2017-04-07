@@ -1,0 +1,8 @@
+title: angular-reset-on
+description: Reset a field when the given condition is true.
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-tactile
+
+gems:
+  - jekyll-mentions
