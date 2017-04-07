@@ -1,6 +1,6 @@
 {
   "name": "angular-reset-on",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Resets a field to its initial value (or cleans) when given scope expression is true.",
   "main": "dist/angular-reset-on.min.js",
   "scripts": {
