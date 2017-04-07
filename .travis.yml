@@ -11,8 +11,6 @@ before_script:
   - npm install -g gulp-cli
   - npm install
   - bower install
-
-after_script:
   - gulp
   
 env:

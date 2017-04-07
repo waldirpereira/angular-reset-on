@@ -1,6 +1,12 @@
 Change Log
 --------
 
+v2.0.3
+ - updating changelog
+
+v2.0.2
+ - including tests lib again
+
 v2.0.1
  - updating README.md
 

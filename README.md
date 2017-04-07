@@ -1,6 +1,6 @@
 <p align="center">
     <h1><a href="https://waldirpereira.github.io/angular-reset-on">ng-reset-on</a> directive</h1>
-    <strong>Reset a field when the given condition is true.</strong>
+    <strong>Resets a field to its initial value (or cleans) when given scope expression is true.</strong>
 </p>
 
 <p align="center">
@@ -59,6 +59,10 @@ angular.module('myModule', ['ng-reset-on'])
  - `mode`: (default: `clean`)
    - `reset`: resets the field to its initial value
    - `clean`: cleans the field
+
+# Changelog
+
+See [CHANGELOG.md](https://github.com/waldirpereira/angular-reset-on/blob/master/CHANGELOG.md)
 
 # Contribution
  - Using [Gulp](http://gulpjs.com) as build tool
