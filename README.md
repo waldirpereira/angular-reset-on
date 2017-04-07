@@ -49,7 +49,20 @@ angular.module('myModule', ['ng-reset-on'])
 ```HTML
 <body ng-app="myModule">
     <div ng-controller="Ctrl">
-        <input type="text" ng-reset-on="someField == 1" />
+        <input type="text" ng-model="thisField" ng-reset-on="anotherField === 1" mode="reset" />
     </div>
 </body>
 ```
+
+#### Options
+ - `mode`: (default: `clean`)
+   - `reset`: resets the field to its initial value
+   - `clean`: cleans the field
+
+#### Contribution
+ - Using [Gulp](http://gulpjs.com) as build tool
+ - Uses [jasmine 2.5.2](http://jasmine.github.io) in writing unit test specs
+ - `gulp` to build the project
+ - `gulp test` to run unit tests
+ - Update `README.md` and `CHANGELOG.md` to reflect the new changes
+ - Update the version number of `package.json` and `bower.json`

@@ -1,7 +1,7 @@
 {
   "name": "angular-reset-on",
-  "version": "1.0.6",
-  "description": "Reset a field when the given condition is true.",
+  "version": "2.0.0",
+  "description": "Resets a field to its initial value (or cleans) when given scope expression is true.",
   "main": "dist/angular-reset-on.min.js",
   "authors": [
     "Waldir J. Pereira Junior"
@@ -21,7 +21,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.0.8"
+    "angular": "^1.5.0",
+	"angular-sanitize": "^1.5.0"
   },
   "devDependencies": {
     "jasmine": "~2.5.2",

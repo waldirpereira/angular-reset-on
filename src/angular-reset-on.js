@@ -1,9 +1,9 @@
 /**
- * "Reset on" directive for Angular 1.0.0
+ * "Reset on" directive for Angular 2.0
  * 
- * Reset a field when a given scope condition is true
+ * Resets a field to its initial value (or cleans) when given scope expression is true
  *
- * @author  Waldir J. Pereira Junior <waldirpereira@gmail.com>
+ * @author  Waldir Pereira <waldirpereira@gmail.com>
  * https://github.com/waldirpereira/angular-reset-on
  */
 
@@ -11,33 +11,63 @@
     'use strict';
 
     angular.module('ng-reset-on', [])
-        .directive("ngResetOn", ResetOn);
+        .directive("ngResetOn", ["$timeout", ResetOn]);
 
-    function ResetOn() {
+    function ResetOn($timeout) {
         return {
             restrict: 'A',
             require: 'ngModel',
             link: function ($scope, element, attrs, ngModelCtrl) {
-                $scope.$watch(attrs.ngResetOn, function () {
-                    if (!$scope.$eval(attrs.ngResetOn)) 
-                      return;
-                      
-                    if (!ngModelCtrl.$modelValue && typeof(ngModelCtrl.$modelValue) !== "boolean")
-                        return;
+              var initialValue;
+              
+              $timeout(function() {
+                initialValue = (attrs.value || ngModelCtrl.$modelValue || ngModelCtrl.$viewValue);
+              });
+              
+              var mode = attrs.mode || "clean";
+              if (mode !== "clean" && mode !== "reset")
+                throw("ng-reset-on error: mode must be 'clean' or 'reset'");
+            
+              $scope.$watch(attrs.ngResetOn, function () {
+                if (!$scope.$eval(attrs.ngResetOn)) 
+                  return;
 
-                    if (Array.isArray(ngModelCtrl.$modelValue)) {
-                        //specific treatment for multiple uiSelect
-                        var uiSelect = element.controller('uiSelect');
-                        if (uiSelect && uiSelect.multiple)
-                            uiSelect.selected.length = 0;
+                mode = attrs.mode || "clean";
+				if (mode !== "clean" && mode !== "reset")
+                  throw("ng-reset-on error: mode must be 'clean' or 'reset'");
+                
+                var resetValue;
+                if (mode === "reset")
+                  resetValue = initialValue;
+                
+                if (!ngModelCtrl.$modelValue && typeof(ngModelCtrl.$modelValue) !== "boolean" && mode === "clean")
+                    return;
 
-                        ngModelCtrl.$modelValue.length = 0;
-                    } else {
-                        ngModelCtrl.$setViewValue(undefined);
+                if (Array.isArray(ngModelCtrl.$modelValue)) {
+                  //specific treatment for multiple uiSelect
+                  var uiSelect = element.controller('uiSelect');
+                  if (uiSelect && uiSelect.multiple) {
+                    if (resetValue) {
+                      uiSelect.selected.length = 0;
+                      resetValue.forEach(function(val){
+                        uiSelect.selected.push(val);
+                      });
                     }
-                    
-                    ngModelCtrl.$render();
-                });
+                    else
+                      uiSelect.selected.length = 0;
+                  }
+
+                  if (resetValue)
+                    ngModelCtrl.$setViewValue(resetValue);
+                  else
+                    ngModelCtrl.$modelValue.length = 0;
+				
+                } else {
+                  ngModelCtrl.$setViewValue(resetValue);
+                }
+                
+                ngModelCtrl.$render();
+              });
             }
         };
     }

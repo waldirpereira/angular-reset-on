@@ -68,6 +68,8 @@ gulp.task('copy-tests-lib', ['clean-tests-lib'], function() {
 			.pipe(gulp.dest(testsLibPath + 'jquery')),
 		gulp.src(componentsPath + 'angular/*.js')
 			.pipe(gulp.dest(testsLibPath + 'angular')),
+		gulp.src(componentsPath + 'angular-sanitize/*.js')
+			.pipe(gulp.dest(testsLibPath + 'angular-sanitize')),
 		gulp.src(componentsPath + 'angular-mocks/*.js')
 			.pipe(gulp.dest(testsLibPath + 'angular-mocks')),
 		gulp.src(componentsPath + 'angular-ui-select/dist/*.js')

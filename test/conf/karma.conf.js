@@ -15,6 +15,7 @@ module.exports = function(config) {
     files: [
           './test/lib/jquery/jquery.js',
           './test/lib/angular/angular.js',
+          './test/lib/angular-sanitize/angular-sanitize.js',
           './test/lib/angular-mocks/angular-mocks.js',
           './test/lib/ui-select/select.js',
           './src/angular-reset-on.js',

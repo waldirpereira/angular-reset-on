@@ -4,64 +4,104 @@
 <head>
   <meta charset="utf-8" />
   <title>angular-reset-on example</title>
-  <script data-require="angular.js@1.0.x" src="https://code.angularjs.org/1.0.8/angular.js" data-semver="1.0.8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.js"></script>
   <script src="../dist/angular-reset-on.js"></script>
   <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css" />
+  <style>
+    ul.form li {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 
-<body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl as ctrl">
   
-  Selection:
-  <select ng-model="selection">
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-    <option value="4">Four</option>
-    <option value="5">Five</option>
-  </select>
-
-  <ul>
+  <h2>1. Change the form fields</h2>
+  <ul class="form">
     <li>
-      Clear on selection == One:
-      <input type="text" ng-model="field1" ng-reset-on="selection == 1;" />
+      Text field: Reset on <b>ctrl.selection == 1</b>:<br/>
+      <input type="text" ng-model="ctrl.model.field1" ng-reset-on="ctrl.selection == 1" mode="{{ctrl.mode}}" />
     </li>
     <li>
-      Clear on selection == Two:
-      <input type="checkbox" ng-model="field2" ng-reset-on="selection == 2;">
+      Checkbox: eset on <b>ctrl.selection == 2</b>:<br/>
+      <input type="checkbox" ng-model="ctrl.model.field2" ng-reset-on="ctrl.selection == 2" mode="{{ctrl.mode}}">
     </li>
     <li>
-      Clear on selection == Three:
-      <select ng-model="field3" ng-reset-on="selection == 3;">
+      Select field: Reset on <b>ctrl.selection == 3</b>:<br/>
+      <select ng-model="ctrl.model.field3" ng-reset-on="ctrl.selection == 3" mode="{{ctrl.mode}}">
         <option ng-value="a">A</option>
         <option ng-value="b">B</option>
         <option ng-value="c">C</option>
       </select>
     </li>
     <li>
-      Clear on selection == For:
-      <input type="radio" ng-model="field4" ng-value="true" ng-reset-on="selection == 4;"/> True
-      <input type="radio" ng-model="field4" ng-value="false" ng-reset-on="selection == 4;"/> False
+      Radio buttons: Reset on <b>ctrl.selection == 4</b>:<br/>
+      <input type="radio" ng-model="ctrl.model.field4" ng-value="true" ng-reset-on="ctrl.selection == 4" mode="{{ctrl.mode}}"/> True
+      <input type="radio" ng-model="ctrl.model.field4" ng-value="false" ng-reset-on="ctrl.selection == 4" mode="{{ctrl.mode}}"/> False
     </li>
     <li>
-      Clear on selection == Five:
-      <select ng-model="field5" multiple rows="3" ng-reset-on="selection == 5;">
+      Select Multiple: Reset on <b>ctrl.selection == 5</b>:<br/>
+      <select ng-model="ctrl.model.field5" multiple rows="3" ng-reset-on="ctrl.selection == 5" mode="{{ctrl.mode}}">
         <option value="x">X</option>
         <option value="y">Y</option>
         <option value="z">Z</option>
       </select>
     </li>
+    <li>
+      AngularJS ui-select simple: Reset on <b>ctrl.selection == 'uiSelectSimple'</b>:<br/>
+      <ui-select ng-model="ctrl.model.fieldSelectSimple" theme="select2" ng-reset-on="ctrl.selection == 'uiSelectSimple'" mode="{{ctrl.mode}}">
+        <ui-select-match>{{$select.selected}}</ui-select-match>
+        <ui-select-choices repeat="country in ctrl.countries | filter: $select.search">
+          <span ng-bind-html="country | highlight: $select.search"></span>
+        </ui-select-choices>
+      </ui-select>
+    </li>
+    <li>
+      AngularJS ui-select multiple: Reset on <b>ctrl.selection == 'uiSelectMultiple'</b>:<br/>
+      <ui-select multiple ng-model="ctrl.model.fieldSelectMultiple" theme="select2" ng-reset-on="ctrl.selection == 'uiSelectMultiple'" mode="{{ctrl.mode}}">
+        <ui-select-match>{{$item}}</ui-select-match>
+        <ui-select-choices repeat="color in ctrl.colors | filter:$select.search">
+          {{color}}
+        </ui-select-choices>
+      </ui-select>
+    </li>
   </ul>
 
-  <br />
-  <br /> Selection: {{selection}}
-  <br /> Field 1: {{field1}}
-  <br /> Field 2: {{field2}}
-  <br /> Field 3: {{field3}}
-  <br /> Field 4: {{field4}}
-  <br /> Field 5: {{field5 | json}}
+  <h2>2. Select a mode for reseting:</h2>
+  <select ng-model="ctrl.mode">
+    <option value="clean">clean</option>
+    <option value="reset">reset</option>
+  </select>
+
+  <h2>3. Select a value for "selection" scope var:</h2>
+  <select ng-model="ctrl.selection">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="uiSelectSimple">uiSelectSimple</option>
+    <option value="uiSelectMultiple">uiSelectMultiple</option>
+  </select>
+
+  <h2>4. Scope var:</h2>
+  Selection: {{ctrl.selection}}
   
-  <br />
-  <br />
+  <h2>5. Model fields:</h2>
+  <ul>
+    <li>field1: {{ctrl.model.field1}}</li>
+    <li>field2: {{ctrl.model.field2}}</li>
+    <li>field3: {{ctrl.model.field3}}</li>
+    <li>field4: {{ctrl.model.field4}}</li>
+    <li>field5: {{ctrl.model.field5 | json}}</li>
+    <li>fieldSelectSimple: {{ctrl.model.fieldSelectSimple}}</li>
+    <li>fieldSelectMultiple: {{ctrl.model.fieldSelectMultiple | json}}</li>
+  </ul>
+  
   <input type="button" ng-click="resetForm()" value="Reset form"/>
 </body>
 
