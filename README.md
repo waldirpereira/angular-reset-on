@@ -55,11 +55,12 @@ angular.module('myModule', ['ng-reset-on'])
 ```
 
 #### Options
+ - `ng-reset-on`:  AngularJS expression (*required*)
  - `mode`: (default: `clean`)
    - `reset`: resets the field to its initial value
    - `clean`: cleans the field
 
-#### Contribution
+# Contribution
  - Using [Gulp](http://gulpjs.com) as build tool
  - Uses [jasmine 2.5.2](http://jasmine.github.io) in writing unit test specs
  - `gulp` to build the project

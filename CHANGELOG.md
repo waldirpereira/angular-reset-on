@@ -1,6 +1,9 @@
 Change Log
 --------
 
+v2.0.1
+ - updating README.md
+
 v2.0.0
  - Support for reset the field to its initial value
  - Tests improvement
