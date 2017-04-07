@@ -1,7 +1,7 @@
 /**
  * "Reset on" directive for Angular 2.0
  * 
- * Resets to its initial value (or clean) a field when a given scope condition is true
+ * Resets a field to its initial value (or cleans) when given scope expression is true
  *
  * @author  Waldir Pereira <waldirpereira@gmail.com>
  * https://github.com/waldirpereira/angular-reset-on
@@ -22,7 +22,6 @@
               
               $timeout(function() {
                 initialValue = (attrs.value || ngModelCtrl.$modelValue || ngModelCtrl.$viewValue);
-				console.log("_______________initialValue = " + initialValue);
               });
               
               var mode = attrs.mode || "clean";
@@ -34,19 +33,17 @@
                   return;
 
                 mode = attrs.mode || "clean";
-                if (mode !== "clean" && mode !== "reset")
+				if (mode !== "clean" && mode !== "reset")
                   throw("ng-reset-on error: mode must be 'clean' or 'reset'");
                 
                 var resetValue;
                 if (mode === "reset")
                   resetValue = initialValue;
-			  console.log("_______________________________resetValue = " + resetValue);
                 
                 if (!ngModelCtrl.$modelValue && typeof(ngModelCtrl.$modelValue) !== "boolean" && mode === "clean")
                     return;
 
                 if (Array.isArray(ngModelCtrl.$modelValue)) {
-                  
                   //specific treatment for multiple uiSelect
                   var uiSelect = element.controller('uiSelect');
                   if (uiSelect && uiSelect.multiple) {
@@ -59,11 +56,12 @@
                     else
                       uiSelect.selected.length = 0;
                   }
-                  
+
                   if (resetValue)
                     ngModelCtrl.$setViewValue(resetValue);
                   else
                     ngModelCtrl.$modelValue.length = 0;
+				
                 } else {
                   ngModelCtrl.$setViewValue(resetValue);
                 }
